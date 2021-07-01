@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="imagepopup.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <title>imagepopup</title>
+  </head>
+  <body>
+  <div id = "navbar">
+    <h1>LOGO</h1>
+    <input type="checkbox" checked="checked"><i class="fa fa-bars"></i>
+    <ul>
+      <li>Home</li>
+      <li>Content
+        <ul>
+          <li>slides</li>
+          <li>file</li>
+          <li>file</li>
+        </ul>
+      </li>
+      <li>About</li>
+    </ul>
+  </div>
+
+    <div class="image-grid">
+      <div class="image">
+        <img src="a4.jpg" alt="I don't know what this is">
+      </div>
+      <div class="image">
+        <img src="a2.jpg" alt="Yes I know what this is">
+      </div>
+      <div class="image">
+        <img src="a3.jpg" alt="Now here is nothing go back by clicking on blank area">
+      </div>
+    </div>
+
+    <div class="popup">
+      <img src="a2.jpg" alt="new image">
+      <p>Lorem Ipsum is simply dummy text.</p>
+    </div>
+
+    <script type="text/javascript">
+      var preview = document.querySelectorAll(" .image img");
+      var popup = document.querySelector(".popup");
+      var innerimg = document.querySelector(".popup img");
+
+      preview.forEach(function(pre){
+        pre.addEventListener("click", function(){
+
+          document.querySelector('.image-grid').style.position = 'fixed';
+          popup.classList.add("open");
+          innerimg.classList.add("open");
+
+          var source = pre.getAttribute('src');
+          var text = pre.getAttribute('alt');
+          innerimg.src = source;
+          document.querySelector(".popup p").innerHTML = text;
+        });
+      });
+
+      popup.addEventListener("click", function(e){
+        if(e.target.classList.contains('popup')){
+          popup.classList.remove("open");
+          innerimg.classList.remove("open");
+          document.querySelector('.image-grid').style.position = 'relative';
+        }
+      });
+    </script>
+  </body>
+</html>

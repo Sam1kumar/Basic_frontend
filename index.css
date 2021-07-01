@@ -1,0 +1,162 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#navbar{
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+	min-height: 80px;
+	background: #303030;
+}
+
+#navbar h1{
+	position: absolute;
+	z-index: 1;
+	left: 70%;
+	color: white;
+	font-family: 'Indie Flower', cursive;
+	padding: 20px 20px 0px 20px;
+}
+
+#navbar ul{
+	list-style: none;
+	min-height: 80px;
+	text-decoration: none;
+}
+
+#navbar ul li{
+	width: 100px;
+        user-select: none;
+	display: inline-block;
+	padding: 30px;
+	position: relative;
+	font-weight: 400;
+	color: white;
+}
+
+#navbar ul li::after{
+	content: '';
+	position: absolute;
+	display: block;
+	transform: scale(0);
+	width: 160px;
+	height: 5px;
+	bottom: -1px;
+	left: 0px;
+	background: white;
+	transition: 0.1s;
+}
+
+
+#navbar ul li a{
+	text-decoration: none;
+	color: white;
+}
+
+#navbar ul li ul{
+	position: absolute;
+	display: block;
+	transform: scale(0);
+	transform-origin: top left;
+	top: 78px;
+	left: 0px;
+	transition: 0.3s ease-in-out;
+	background: #303030;
+}
+
+#navbar ul li:hover ul{
+	transform: scale(1);
+}
+
+#navbar ul li:hover::after{
+	transform: scale(1);
+}
+
+#navbar i, input {
+	float: right;
+ 	display: none;
+}
+
+@media (max-width: 768px){
+	#navbar i, #navbar input{
+		display: block;
+	}
+
+	#navbar{
+		z-index: 10;
+		max-height: 70px;
+		position: fixed;
+		width: 100%;
+		background: #303030;
+		z-index: 1;
+	}
+
+	#navbar h1{
+		position: absolute;
+		left: 0px;
+		padding: 10px 20px 0px 20px;
+	}
+
+	#navbar input{ 
+		z-index: 3;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		opacity: 0;
+		left: 88%;
+		margin: 15px auto;
+	}
+	#navbar i{
+		z-index: 2;
+		position: absolute;
+		left: 88%;
+		margin: 20px auto;
+		font-size: 30px;
+		color: white;
+		font-weight: 100;
+	}
+
+	#navbar ul{
+		position: relative;
+		padding: 20px;
+		z-index: -10;
+		top: 80px;
+		background: red;
+		height: 250px;
+		transform: scale(1);
+		transform-origin: top left;
+		transition: 0.3s ease-in-out;
+		background-image: linear-gradient(#303030, #474747);
+	}
+	#navbar ul li{
+		display: block;
+		width: 100px;
+		margin: 0px;
+		padding: 15px 15px;
+	}
+        
+       
+        #navbar ul li:hover::after{
+	        display: none;
+        }
+  
+
+        #navbar ul li:hover::after{
+	        display: none;
+        } 
+
+	#navbar ul li ul{
+		top: -20px;
+		left: 100px;
+		background: #303030;
+		height: 150px;
+		background: none;
+	}
+
+	#navbar input:checked ~ ul{
+		transform: scale(0);
+	}
+}

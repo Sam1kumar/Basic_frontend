@@ -1,0 +1,164 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Open sans', sans-serif;
+	font-size: 16px;
+}
+
+:root{
+	--text-color: white;
+	--icon-color: #F7717D;
+	--other1-color: #DE639A;
+	--other2-color: #7F2982;
+	--bg-color: #16001E;
+}
+
+.navbar{
+	width: 5rem;
+	min-height: 100vh;
+	background: var(--bg-color);
+	position: fixed;
+	transition: 0.2s;
+}
+
+.navbar:hover {
+	width: 15rem;
+}
+
+.navbar:hover .menu-button{
+	transform: translateX(0px);
+}
+
+.navbar:hover .menu-button i{
+	transform: rotate(-180deg);
+}
+
+.navbar:hover ul li a{
+	display: inline-block;
+}
+
+.navbar .menu-button{
+	position: fixed;
+	width: 15rem;
+	transform: translateX(-160px);
+	background: var(--other2-color);
+	transition: 0.2s;
+}
+
+.navbar .menu-button p{
+	color: var(--text-color);
+	font-size: 2rem;
+	padding: 1.25rem;
+	display: inline-block;
+	transition: 0.2s;
+}
+
+.navbar .menu-button i{
+	color: var(--text-color);
+	font-size: 2rem;
+	padding: 1.5rem;
+	float: right;
+	display: inline-block;
+	transform: rotate(0deg);
+	transition: 0.2s;
+	transition-delay: .2s
+}
+
+.navbar ul{
+	width: 100%;
+}
+
+.navbar > ul{
+	margin-top: 5.25rem;
+}
+
+.navbar ul li{
+	position: relative;
+	list-style: none;
+	display: inline-flex;
+	align-items: center;
+	width: 100%; 
+}
+
+.navbar ul .hassubmenu{
+	align-items: baseline; /* this is align top of submenu with the top of the list of which it is submenu*/
+}
+
+.navbar ul li:hover{
+	background: var(--other2-color);
+	color: var(--text-color);
+}
+
+.navbar ul li:hover > a{
+	opacity: 1;
+}
+
+.navbar ul li::before{
+	content: '';
+	position: absolute;
+	width: 3px;
+	height: 56px;
+	background: var(--icon-color); 
+	display: block;
+	opacity: 0;
+	left: 0px;
+}
+
+
+.navbar ul li a{
+	text-decoration: none;
+	padding-left: 1rem;
+	color: var(--text-color);
+	font-size: 1.5rem;
+	opacity: 0.2;
+	display: none;
+	transition: 0.2s ease-out;
+}
+
+.navbar ul li i{
+	text-decoration: none;
+	color: var(--icon-color);
+	padding: 1rem;
+	margin-left: 0.5rem;
+	font-size: 1.5rem;
+	transition: 0.2s ease-out;
+}
+
+.navbar ul li ul{
+	position: absolute;
+	display: block;
+	flex-direction: column;
+	min-width: 100%;
+	transform: translateX(15rem) scale(0);
+	transform-origin: 0 0;
+	background: var(--bg-color);
+	transition: 0.2s;
+}
+
+.navbar ul li i:hover{
+	color: var(--text-color);
+}
+
+.navbar ul li:hover > a{
+	opacity: 1;
+}
+
+.navbar ul li:hover ul{
+	transform: translateX(15rem) scale(1);
+}
+
+.navbar ul li:hover::before{
+	opacity: 1;
+}
+
+.main{
+	margin-left: 5rem;
+	padding: 1rem 2rem 2rem;
+}
+
+.main h1{
+	font-size: 2rem;
+	padding: 1rem 1rem 1rem 0;
+	font-weight: 600;
+	color: var(--bg-color);
+}

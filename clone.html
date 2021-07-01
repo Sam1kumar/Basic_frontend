@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Sriracha&display=swap" rel="stylesheet">
+	<style type="text/css">
+		*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Mulish', sans-serif;
+	box-sizing: border-box;
+}
+
+nav{
+	width: 100%;
+	height: 80px;
+	display: inline-flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #ffffff;
+	position: fixed;
+	border-bottom: 1px solid #F1F1F0;
+	transform: translateY(-80px);
+	z-index: 100000;
+}
+
+nav h1{
+	color: #00b4e7;
+	font-size: 36px;
+	font-family: 'Sriracha', cursive;
+}
+
+nav ul{
+	display: inline-flex;
+	list-style: none;
+	justify-content: space-between;
+	align-items: center;
+	width: 50%;
+	transition: 0.5s;
+}
+
+nav ul li a{
+	text-decoration: none;
+	color: black;
+	padding: 10px;
+}
+
+nav .login{
+	display: block;
+}
+
+nav .login a{
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 80px;
+	text-decoration: none;
+	color: black;
+}
+
+nav .login a i{
+	font-size: 32px;
+}
+
+.responsive{
+	width: 100%;
+	position: fixed;
+	height: 70px;
+	background-color: #ffffff;
+	margin-top: 0px;
+	z-index: 10002;
+	display: none;
+}
+
+.responsive i{
+	font-size: 48.4px;
+	padding: 5px 10px;
+	margin: 5px 20px;
+	border: 1px solid grey;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.main-body{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin-top: 70px;
+}
+
+.main-body .left{
+	width: 22%;
+	display: flex;
+	align-items: center;
+	margin: 20px auto auto 1.5%;
+	border-radius: 10px;
+	height: 80px;
+	justify-content: center;
+	box-shadow: 0px 0px 10px #d2d2d2;
+	position: fixed;
+}
+
+.main-body .left a{
+	text-decoration: none;
+	font-weight: bolder;
+	display: flex;
+	align-items: center;
+	color: #00b4e7;
+}
+
+.main-body .left a i{
+	font-size: 32px;
+	transform: translateX(-40%);
+}
+
+.main-body .middle{
+	grid-column: 2/4;
+	border-left: 1px solid #F1F1F0;
+	border-right: 1px solid #F1F1F0;
+}
+
+.main-body .middle .filter{
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.main-body .middle .filter p{
+	font-size: 16px;
+	padding: 20px;
+}
+
+.main-body .middle .filter i{
+	padding: 20px;
+	font-size: 32px;
+}
+
+.main-body .middle input[name="search"]{
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 30px;
+	height: 24px;
+	border: 1px solid #F1F1F0;
+	border-radius: 25px;
+	padding: 15px;
+}
+
+.main-body .middle .card-box {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	width: 80%;
+	margin: auto;
+}
+
+.main-body .middle .card-box .card{
+	border: 1px solid #F1F1F0;
+}
+
+.main-body .middle .card-box .card img{
+	width: 40%;
+	border-radius: 50%;
+	margin-left: 30%;
+	margin-top: 30px;
+
+}
+
+.main-body .middle .card-box .card > p{
+	text-align: center;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+.main-body .middle .card-box .card .tag{
+	width: 40%;
+	margin: 8px auto;
+}
+
+.main-body .middle .card-box .card .tag > p{
+	text-align: center;
+	font-weight: bolder;
+	font-size: 14px;
+	padding: 0px 5px;
+	border-radius: 10px;
+	background-color: yellow;
+
+}
+
+.main-body .middle .card-box .card .rating, .main-body .middle .card-box .card .slot{
+	width: 100%;
+	margin: auto;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.main-body .middle .card-box .card .slot{
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.main-body .middle .card-box .card > p i{
+	color: yellow;
+	font-size: 16px;
+}
+
+.main-body .middle .card-box .card > p i span{
+	color: black;
+	font-size: 16px;
+}
+
+.main-body .middle .card-box .card > p:nth-child(4){
+	font-size: 12px;
+}
+
+.main-body .middle .card-box .card .slot p{
+	font-size: 14px;
+	padding: 5px
+}
+
+.main-body .middle .card-box .card .slot .slider{
+	width: 50%;
+	height: 10px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	z-index: 2;
+}
+
+.main-body .middle .card-box .card .slot .slider span{
+	width: 50%;
+	display: block;
+	background-color: #1478f6;
+	border-radius: 5px;
+	height: 10px;
+}
+
+.main-body .right{
+	grid-column: 4/5;
+}
+
+.main-body .right .article-box{
+	position: fixed;
+	width: 22%;
+	padding-top: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.main-body .right .article-box h1{
+	font-size: 16px;
+	padding: 15px 0 7px 0px;
+	border-bottom: 1px solid #F1F1F0;
+}
+
+.main-body .right .article-box .heading{
+	display: inline-flex;
+	align-items: center;
+	flex-flow: left;
+}
+
+.main-body .right .article-box .heading img{
+	width: 50px;
+	border-radius: 50%;
+	margin: 10px 15px 10px 0px;
+}
+
+.main-body .right .article-box .heading .title p:nth-child(1){
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.main-body .right .article-box .heading .title p:nth-child(2){
+	font-size: 12px;
+	color: grey;
+}
+
+.messagebox{
+	position: fixed;
+	display: inline-flex;
+	align-items: center;
+	width: 170px;
+	height: 33px;
+	bottom: 0px;
+	right: 5px;
+	background: #a3aaa3;
+	border-radius: 5px;
+	cursor: pointer;
+	z-index: 10009;
+}
+
+.messagebox p{
+	padding-left: 4px;
+	transform: translateY(-2px);
+}
+
+.messagebox i{
+	padding: 8px;
+	border-radius: 5px 0 0 0;
+	background-color: #6B6A69
+}
+
+
+@media (max-width: 1200px){
+	.main-body .middle .filter p{
+		font-size: 12px;
+	}
+
+	.main-body .middle .card-box{
+		grid-template-columns: 1fr 1fr;
+		width: 90%;
+	}
+}
+
+@media (max-width: 1080px){
+	nav{
+		transform: translateY(-140px);
+	}
+
+	.responsive{
+		transform: translateY(-60px);
+	}
+	
+	.main-body .middle{
+		grid-column: 1/5;
+	}
+
+	.main-body{
+		margin-top: 140px;
+	}
+
+	.main-body .left, .main-body .right{
+		display: none;
+	}
+
+	.main-body .middle .card-box{
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		width: 90%;
+	}
+
+	.main-body .middle .filter p{
+		font-size: 16px;
+	}
+
+	.responsive {
+		display: block;
+	}
+
+	nav{
+		justify-content: space-between;
+	}
+
+	nav h1{
+		margin-left: 10vw;
+	}
+
+	nav a{
+		margin-right: 10vw;
+	}
+
+	nav ul{
+		display: block;
+		position: fixed;
+		height: 100vh;
+		width: 30vw;
+		top: 150px;
+		left: 0px;
+		transform: translateX(-30vw);
+		box-shadow: 0px 5px 10px 3px grey;
+		border-radius: 0 10px 0 0;
+		background-color: #ffffff;
+	}
+
+	nav ul li{
+		padding: 20px;
+		border-bottom: 1px solid grey;
+	}
+}
+
+
+
+@media (max-width: 950px){
+	.main-body .middle .card-box{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		width: 90%;
+	}
+
+}
+
+@media (max-width: 900px){
+	nav ul{
+		width: 80vw;
+		transform: translateX(-82vw);
+	}
+}
+
+@media (max-width: 700px){
+	.main-body .middle .card-box{
+		grid-template-columns: 1fr 1fr 1fr;
+		width: 90%;
+	}
+
+	.main-body .middle .filter p{
+		font-size: 12px;
+	}
+
+}
+
+@media (max-width: 500px){
+	.main-body .middle .card-box{
+		grid-template-columns: 1fr 1fr;
+		width: 90%;
+	}
+
+	.main-body .middle .filter p{
+		font-size: 12px;
+	}
+
+}
+
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+	<nav>
+		<h1>Fittr</h1>
+		<ul>
+			<li><a href="#">Coaching</a></li>
+			<li><a href="#">Discover</a></li>
+			<li><a href="#">Corporate</a></li>
+			<li><a href="#">Become a coach</a></li>
+			<li><a href="#">Events</a></li>
+			<li><a href="#">About</a></li>
+		</ul>
+		<div class="login"><a href="#">Login <i class="fa fa-user-circle" aria-hidden="true"></i></a></div>
+	</nav>
+
+	<div class="responsive">
+		<i class="fa fa-bars"></i>
+	</div>
+
+	<div class="main-body">
+		<div class="left">
+			<a href="#"><i class="fa fa-user" aria-hidden="true"></i> Fitness &amp; nutrition</a>
+		</div>
+		<div class="middle">
+			<div class="filter"><p>Our online fitness coaches have trained and transformed<a href="#">110k+ people</a></p><i class="fa fa-filter" aria-hidden="true"></i></div>
+
+			<input type="text" name="search" placeholder="search">
+
+			<div class="card-box">
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p> <i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p> <i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p> <i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p><i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+				<div class="card">
+					<img src="c.jpg" alt="profile-pic">
+					<p>Name of trainer</p>
+					<div class="tag"><p>Standard</p></div>
+					<p> <i class="fa fa-star" aria-hidden="true"><span>4.7&nbsp;</span></i>Trained xyz people</p>
+					<div class="slot"><p>slots</p><div class="slider"><span></span></div><p>10</p> </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="right">
+			<div class="article-box">
+				<h1>Popular Articles</h1>
+				<div class="articles">
+					<div class="heading"><img src="c.jpg" alt="title-image">
+					<div class="title"><p>Here we will write heading..</p><p>Author: Name of author</p></div></div>
+				</div>
+				<div class="articles">
+					<div class="heading"><img src="c.jpg" alt="title-image">
+					<div class="title"><p>Here we will write heading..</p><p>Author: Name of author</p></div></div>
+				</div>
+				<div class="articles">
+					<div class="heading"><img src="c.jpg" alt="title-image">
+					<div class="title"><p>Here we will write heading..</p><p>Author: Name of author</p></div></div>
+				</div>
+				<div class="articles">
+					<div class="heading"><img src="c.jpg" alt="title-image">
+					<div class="title"><p>Here we will write heading..</p><p>Author: Name of author</p></div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="messagebox">
+		<i class="fa fa-envelope" aria-hidden="true"></i>
+		<p>chat with us</p>
+	</div>
+
+	<script type="text/javascript">
+		
+		const menu = document.querySelector('.responsive i');
+		const ul = document.querySelector('nav ul');
+		var active = false;
+		menu.addEventListener('click', function(e){
+
+			if(active){
+				ul.style.transform = 'translate(-'+ul.offsetWidth+10 + 'px)';
+				active = false;
+			}
+
+			else{
+				ul.style.transform = 'translate(0px)';
+				active = true;
+			}
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
